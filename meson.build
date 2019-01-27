@@ -7,5 +7,8 @@ dependencies = [
     meson.get_compiler('c').find_library('m', required : false)
 ]
 
-subdir('src')
+pkg = import('pkgconfig')
+
+
+subdir('lib')
 subdir('test')
