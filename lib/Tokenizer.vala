@@ -28,15 +28,15 @@ public class VNLPLib.Tokenizer : Object {
         set { _text = value; }
     }
 
-    public string[] split() {
+    public Gee.ArrayList<string> split() {
         string stripped = this._text.strip ();
 
         foreach (char c in this.toRemove) {
             stripped = stripped.replace (c.to_string (), "");
         }
 
-        string[] split = stripped.split(" ");
+        var splitArrayList = new Gee.ArrayList<string>.wrap(stripped.split(" "));
 
-        return split;
+        return splitArrayList;
     }
 }

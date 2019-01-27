@@ -22,37 +22,28 @@ class VNLPLib.Tests : Object {
     public static int main (string[] args) {
 
         // Tokenizer Tests
-        string[] tokenizerTestResultOne = {"hello", "world"};
-        string[] tokenizerTestResultTwo = {"Eunice", "has", "fleas"};
+        var tokenizerTestResultOne = new Gee.ArrayList<string>.wrap({"hello", "world"});
+        var tokenizerTestResultTwo = new Gee.ArrayList<string>.wrap({"Eunice", "has", "fleas"});
 
         tokenizerAssertEqual ("hello, world!", tokenizerTestResultOne);
         tokenizerAssertEqual ("Eunice has fleas.", tokenizerTestResultTwo);
         
-        // Ngram Tests
-
-        string[,] testResultThree = {{"hello", "world"}, {"world", "people"}};
 
         return 0;
     }
 
-    static void tokenizerAssertEqual (string input, string[] result) {
+    static void tokenizerAssertEqual (string input, Gee.ArrayList<string> result) {
         var tokenizer = new Tokenizer ();
         
         tokenizer.text = input;
 
-        string[] tokenizerResult = tokenizer.split ();
-
+        var tokenizerResult = tokenizer.split ();
+        
         if (tokenizerResult != result) {
             error ("Error in Tokenizer");
         }
          
     }
 
-    static void ngramAssertEqual(string input, string[,] result) {
-        var ngram = new Ngram ();
-        ngram.text = input;
-
-        string[] ngramResult = ngram.calculate ();
-    }
 
 }
