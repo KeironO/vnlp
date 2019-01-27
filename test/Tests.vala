@@ -18,8 +18,10 @@
 */
 
 
-class VNLPLib.Test : Object {
+class VNLPLib.Tests : Object {
     public static int main (string[] args) {
+
+        // Tokenizer Tests
         string[] testResultOne = {"hello", "world"};
         string[] testResultTwo = {"Eunice", "has", "fleas"};
 

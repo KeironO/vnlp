@@ -17,11 +17,12 @@
 * Boston, MA 02110-1301 USA
 */
 
+
 public class VNLPLib.Ngram : Object {
 
     private string _text;
     private int _num_grams;
-    private string _pad;
+    private string _pad = "left";
 
     public string text {
         get { return _text; }
@@ -41,6 +42,10 @@ public class VNLPLib.Ngram : Object {
     private string[]? calculate() {
 
         var tok = new Tokenizer ();
+        tok.text = this.text;
+        var tokenizedText = tok.split ();
+
+        int count = tokenizedText.length;
         return null;
     }
 }

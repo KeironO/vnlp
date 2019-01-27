@@ -2,7 +2,8 @@
 test_name = meson.project_name() + '-test'
 
 test_sources = files([
-    'TestTokenizer.vala'
+    'Tests.vala',
+
 ])
 
 tests_deps = [
