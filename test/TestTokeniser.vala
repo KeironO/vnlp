@@ -33,6 +33,7 @@ class Tokeniser.Test : Object {
         var tokeniser = new Tokeniser ();
     
         string[] tokeniser_result = tokeniser.split (input);
+
         string tokeniserResultStr = string.joinv (",", tokeniser_result);
         string resultStr = string.joinv (",", result);
 
