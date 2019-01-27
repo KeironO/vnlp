@@ -34,13 +34,12 @@ class VNLPLib.Tests : Object {
 
  
     static void tokenizerAssertEqual (string input, Gee.ArrayList<string> result) {
-        var tokenizer = new Tokenizer ();
         
+        var tokenizer = new Tokenizer ();
         tokenizer.text = input;
-
         var tokenizerResult = tokenizer.split ();
+
         // Need to work out Gee's equality.
-         
     }
 
 
