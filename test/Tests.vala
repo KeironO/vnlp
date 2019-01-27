@@ -42,11 +42,8 @@ class VNLPLib.Tests : Object {
 
         string[] tokenizerResult = tokenizer.split ();
 
-        string tokenizerResultStr = string.joinv (",", tokenizerResult);
-        string resultStr = string.joinv (",", result);
-
-        if (tokenizerResultStr != resultStr) {
-            error ("%s is %s but should be %s", input, tokenizerResultStr, resultStr);
+        if (tokenizerResult != result) {
+            error ("Error in Tokenizer");
         }
          
     }
