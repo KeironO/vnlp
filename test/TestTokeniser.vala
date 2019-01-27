@@ -18,14 +18,13 @@
 */
 
 
-class Tokeniser.CoreTest : Object {
+class Tokeniser.Test : Object {
     public static int main (string[] args) {
         string[] testResultOne = {"hello", "world"};
         string[] testResultTwo = {"Eunice", "has", "fleas"};
 
         assert_equal ("hello, world!", testResultOne);
         assert_equal ("Eunice has fleas.", testResultTwo);
-
 
         return 0;
     }
