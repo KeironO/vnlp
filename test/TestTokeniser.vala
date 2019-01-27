@@ -31,17 +31,15 @@ class Tokeniser.Test : Object {
 
     static void assert_equal (string input, string[] result) {
         var tokeniser = new Tokeniser ();
+    
+        string[] tokeniser_result = tokeniser.split (input);
+        string tokeniserResultStr = string.joinv (",", tokeniser_result);
+        string resultStr = string.joinv (",", result);
 
-        try {
-            string[] tokeniser_result = tokeniser.split (input);
-            if (tokeniser_result != result) {
-                string tokeniserResultStr = string.joinv (", ", tokeniser_result);
-                string resultStr = string.joinv (", ", result);
-                error ("%s is %s, but should be %s", input, tokeniserResultStr, resultStr);
-            }
-        } catch (Error e) {
-            error ("Exception at input %s", input);
+        if (tokeniserResultStr != resultStr) {
+            error ("%s is %s but should be %s", input, tokeniserResultStr, resultStr);
         }
+         
     }
 
 }

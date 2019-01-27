@@ -29,8 +29,10 @@ namespace Tokeniser {
             foreach (char c in this.toRemove) {
                 stripped = stripped.replace (c.to_string (), ""); 
             }
+            
+            string[] split = stripped.split(" ");
 
-            return stripped.split(" ");
+            return split;
         }
 
 
