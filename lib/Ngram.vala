@@ -17,38 +17,30 @@
 * Boston, MA 02110-1301 USA
 */
 
-using Tokeniser;
+public class VNLPLib.Ngram : Object {
 
-namespace Ngram {
+    private string _text;
+    private int _num_grams;
+    private string _pad;
 
-    public class Ngram : Object {
-
-        private string _text;
-        private int _num_grams;
-        private string _pad = "left";
-
-        public string text {
-            get { return _text; }
-            set { _text = value; }
-        }
-
-        public int num_grams {
-            get { return _num_grams; }
-            set { _num_grams = value; }
-        }
-
-        public string pad {
-            get { return _pad; }
-            set { _pad = value; }
-        }
-    
-        private string[] calculate() {
-            
-            var tok = new Tokeniser.Tokeniser ();
-
-        }
-
+    public string text {
+        get { return _text; }
+        set { _text = value; }
     }
 
+    public int num_grams {
+        get { return _num_grams; }
+        set { _num_grams = value; }
+    }
 
+    public string pad {
+        get { return _pad; }
+        set { _pad = value; }
+    }
+
+    private string[]? calculate() {
+
+        var tok = new Tokenizer ();
+        return null;
+    }
 }

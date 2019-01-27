@@ -18,7 +18,7 @@
 */
 
 
-class Tokeniser.Test : Object {
+class VNLPLib.Test : Object {
     public static int main (string[] args) {
         string[] testResultOne = {"hello", "world"};
         string[] testResultTwo = {"Eunice", "has", "fleas"};
@@ -30,7 +30,7 @@ class Tokeniser.Test : Object {
     }
 
     static void assert_equal (string input, string[] result) {
-        var tokeniser = new Tokeniser ();
+        var tokeniser = new Tokenizer ();
         
         tokeniser.text = input;
 
