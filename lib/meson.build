@@ -1,7 +1,7 @@
 conf_data = configuration_data()
 
 lib_sources = files(
-    'Tokeniser.vala',
+    'Tokenizer.vala',
     'Ngram.vala'
 )
 
@@ -25,5 +25,6 @@ pkg.generate(
 )
 
 lib_dep = declare_dependency(
-    sources: lib_sources
+    link_with: libvnlp,
+    include_directories: include_directories('.')
 )

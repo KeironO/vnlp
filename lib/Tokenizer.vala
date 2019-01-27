@@ -17,31 +17,26 @@
 * Boston, MA 02110-1301 USA
 */
 
-namespace Tokeniser {
+public class VNLPLib.Tokenizer : Object {
 
-    public class Tokeniser : Object {
-        
-        private char[] toRemove = {',', '.', '!', '?', '\'', '"', ':', '\t', '\n', '(', ')', '-'};
-        
-        private string _text;
+    private char[] toRemove = {',', '.', '!', '?', '\'', '"', ':', '\t', '\n', '(', ')', '-'};
 
-        public string text {
-            get { return _text; }
-            set { _text = value; }
+    private string _text;
+
+    public string text {
+        get { return _text; }
+        set { _text = value; }
+    }
+
+    public string[] split() {
+        string stripped = this._text.strip ();
+
+        foreach (char c in this.toRemove) {
+            stripped = stripped.replace (c.to_string (), "");
         }
 
-        public string[] split() {
-            string stripped = this._text.strip ();
-            
-            foreach (char c in this.toRemove) {
-                stripped = stripped.replace (c.to_string (), ""); 
-            }
-            
-            string[] split = stripped.split(" ");
+        string[] split = stripped.split(" ");
 
-            return split;
-        }
-
-
+        return split;
     }
 }

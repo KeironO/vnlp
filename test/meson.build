@@ -2,14 +2,17 @@
 test_name = meson.project_name() + '-test'
 
 test_sources = files([
-    'TestTokeniser.vala'
+    'TestTokenizer.vala'
 ])
 
+tests_deps = [
+    dependencies,
+    lib_dep
+]
 tests = executable(
     test_name,
     test_sources,
-    meson.source_root() + '/lib/Tokeniser.vala',
-    dependencies: dependencies,
+    dependencies: tests_deps,
     c_args: [ '-g' ],
     link_args: ['-lm'],
     install: false
