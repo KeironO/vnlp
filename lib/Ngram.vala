@@ -43,8 +43,8 @@ namespace Ngram {
         }
     
         private string[] calculate() {
-            string[] fuck = {"Fuck"};
-            return fuck;
+            
+            var tok = new Tokeniser ();
 
         }
 
