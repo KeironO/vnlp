@@ -1,6 +1,10 @@
 # vnlp
 Natural Language Processing Library for Vala
 
+## Features
+
+- Tokenizer
+
 ## Minimum Requirements
 
 - vala >= 0.40.13
