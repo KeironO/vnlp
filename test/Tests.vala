@@ -39,6 +39,9 @@ class VNLPLib.Tests : Object {
         tokenizer.text = input;
         var tokenizerResult = tokenizer.split ();
 
+        if (tokenizerResult.contains_all(result) != true) {
+            error("We have a problem");
+        }
         // Need to work out Gee's equality.
     }
 
