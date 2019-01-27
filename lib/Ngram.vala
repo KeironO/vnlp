@@ -25,7 +25,7 @@ namespace Ngram {
 
         private string _text;
         private int _num_grams;
-        private string _pad;
+        private string _pad = "left";
 
         public string text {
             get { return _text; }
@@ -44,9 +44,11 @@ namespace Ngram {
     
         private string[] calculate() {
             
-            var tok = new Tokeniser ();
+            var tok = new Tokeniser.Tokeniser ();
 
         }
 
     }
+
+
 }
