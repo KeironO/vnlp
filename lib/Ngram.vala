@@ -39,13 +39,13 @@ public class VNLPLib.Ngram : Object {
         set { _pad = value; }
     }
 
-    private string[]? calculate() {
+    public string[] calculate() {
 
         var tok = new Tokenizer ();
         tok.text = this.text;
         var tokenizedText = tok.split ();
 
         int count = tokenizedText.length;
-        return null;
+        return tokenizedText;
     }
 }

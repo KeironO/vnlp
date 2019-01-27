@@ -22,29 +22,40 @@ class VNLPLib.Tests : Object {
     public static int main (string[] args) {
 
         // Tokenizer Tests
-        string[] testResultOne = {"hello", "world"};
-        string[] testResultTwo = {"Eunice", "has", "fleas"};
+        string[] tokenizerTestResultOne = {"hello", "world"};
+        string[] tokenizerTestResultTwo = {"Eunice", "has", "fleas"};
 
-        assert_equal ("hello, world!", testResultOne);
-        assert_equal ("Eunice has fleas.", testResultTwo);
+        tokenizerAssertEqual ("hello, world!", tokenizerTestResultOne);
+        tokenizerAssertEqual ("Eunice has fleas.", tokenizerTestResultTwo);
+        
+        // Ngram Tests
+
+        string[,] testResultThree = {{"hello", "world"}, {"world", "people"}};
 
         return 0;
     }
 
-    static void assert_equal (string input, string[] result) {
-        var tokeniser = new Tokenizer ();
+    static void tokenizerAssertEqual (string input, string[] result) {
+        var tokenizer = new Tokenizer ();
         
-        tokeniser.text = input;
+        tokenizer.text = input;
 
-        string[] tokeniser_result = tokeniser.split ();
+        string[] tokenizerResult = tokenizer.split ();
 
-        string tokeniserResultStr = string.joinv (",", tokeniser_result);
+        string tokenizerResultStr = string.joinv (",", tokenizerResult);
         string resultStr = string.joinv (",", result);
 
-        if (tokeniserResultStr != resultStr) {
-            error ("%s is %s but should be %s", input, tokeniserResultStr, resultStr);
+        if (tokenizerResultStr != resultStr) {
+            error ("%s is %s but should be %s", input, tokenizerResultStr, resultStr);
         }
          
+    }
+
+    static void ngramAssertEqual(string input, string[,] result) {
+        var ngram = new Ngram ();
+        ngram.text = input;
+
+        string[] ngramResult = ngram.calculate ();
     }
 
 }
