@@ -23,11 +23,30 @@ namespace Ngram {
 
     public class Ngram : Object {
 
-        private string text;
-        private int n;
-        private string pad;
+        private string _text;
+        private int _num_grams;
+        private string _pad;
 
+        public string text {
+            get { return _text; }
+            set { _text = value; }
+        }
+
+        public int num_grams {
+            get { return _num_grams; }
+            set { _num_grams = value; }
+        }
+
+        public string pad {
+            get { return _pad; }
+            set { _pad = value; }
+        }
+    
+        private string[] calculate() {
+            string[] fuck = {"Fuck"};
+            return fuck;
+
+        }
 
     }
-
 }

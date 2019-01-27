@@ -22,9 +22,16 @@ namespace Tokeniser {
     public class Tokeniser : Object {
         
         private char[] toRemove = {',', '.', '!', '?', '\'', '"', ':', '\t', '\n', '(', ')', '-'};
-    
-        public string[] split(string text) {
-            string stripped = text.strip ();
+        
+        private string _text;
+
+        public string text {
+            get { return _text; }
+            set { _text = value; }
+        }
+
+        public string[] split() {
+            string stripped = this._text.strip ();
             
             foreach (char c in this.toRemove) {
                 stripped = stripped.replace (c.to_string (), ""); 

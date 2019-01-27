@@ -31,8 +31,10 @@ class Tokeniser.Test : Object {
 
     static void assert_equal (string input, string[] result) {
         var tokeniser = new Tokeniser ();
-    
-        string[] tokeniser_result = tokeniser.split (input);
+        
+        tokeniser.text = input;
+
+        string[] tokeniser_result = tokeniser.split ();
 
         string tokeniserResultStr = string.joinv (",", tokeniser_result);
         string resultStr = string.joinv (",", result);

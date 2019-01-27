@@ -1,7 +1,8 @@
 conf_data = configuration_data()
 
 lib_sources = files(
-    'Tokeniser.vala'
+    'Tokeniser.vala',
+    'Ngram.vala'
 )
 
 libvnlp = shared_library(
